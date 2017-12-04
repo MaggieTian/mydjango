@@ -5,7 +5,7 @@ import datetime
 from django.utils import timezone
 
 # Create your models here.
-class Question(models.Model):
+class QuestionTian(models.Model):
 
     question_txt=models.CharField(max_length=200)
     pub_data=models.DateField('date published')
@@ -13,10 +13,9 @@ class Question(models.Model):
     def __str__(self):
         return self.question_txt
 
-
-
 class Choice(models.Model):
-    question = models.ForeignKey(Question)
+
+    question = models.ForeignKey(QuestionTian)
     choice_txt = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
